@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "test-task-wht-agency"
+version = "0.1.0"
+description = ""
+authors = ["RKostuk <rostislav.kostuk.work@gmail.com>"]
+readme = "README.md"
+packages = [{include = "test_task_wht"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.104.0"
+uvicorn = "^0.23.2"
+sqlalchemy = "^2.0.22"
+pydantic = {extras = ["email"], version = "^2.4.2"}
+loguru = "^0.7.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
