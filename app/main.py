@@ -2,7 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
-from routers.router import router
+from routers.team_router import team_router
+from routers.user_router import user_router
 from core.config import Config
 
 # from loguru import logger as log
@@ -22,7 +23,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(router)
+app.include_router(user_router)
+app.include_router(team_router)
 
 if __name__ == "__main__":
     uvicorn.run(
