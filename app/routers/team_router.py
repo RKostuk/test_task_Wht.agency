@@ -6,7 +6,7 @@ from schemas.pySchemas import TeamDataSchema, TeamNameSchema, TeamUpdateDataSche
 from utils.utils import return_result
 
 TM = Team_method()
-team_router = APIRouter(prefix='/team', tags=['team'])
+team_router = APIRouter(prefix='/team', tags=['Team'])
 
 
 @team_router.post('/create/', status_code=200)
