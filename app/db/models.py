@@ -8,6 +8,7 @@ Base = declarative_base()
 def register_models(engine) -> None:
     Base.metadata.create_all(bind=engine)
 
+
 class Team(Base):
     __tablename__ = 'teams'
 

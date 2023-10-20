@@ -3,15 +3,20 @@ from fastapi import APIRouter
 from db.Person import Person_method
 from db.Team import Team_method
 from db.person_team_method import Method
-from schemas.pySchemas import PersonDataSchema, TeamDataSchema, TeamAddPersonSchema, TeamNameSchema, \
-    TeamUpdateDataSchema, EmailDataSchema, PersonUpdateDataSchema
+from schemas.pySchemas import (
+    PersonDataSchema,
+    TeamAddPersonSchema,
+    EmailDataSchema,
+    PersonUpdateDataSchema
+)
 
 from utils.utils import return_result
 
 Method = Method()
 PM = Person_method()
 TM = Team_method()
-user_router = APIRouter(prefix='/user')
+user_router = APIRouter(prefix='/user', tags=['User'])
+
 
 @user_router.post('/create/', status_code=200)
 async def add_user(data: PersonDataSchema):
@@ -52,4 +57,3 @@ async def add_user_to_team(data: TeamAddPersonSchema):
         return return_result(result=True, info='successfully add')
     else:
         return return_result(result=False, info='Eror add person')
-

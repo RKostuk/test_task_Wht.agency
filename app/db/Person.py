@@ -24,7 +24,6 @@ class Person_method(Base_method):
         else:
             return False
 
-
     def read_person(self, email_data: EmailDataSchema) -> PersonInfoTeamSchema or bool:
         """
         selec data person
