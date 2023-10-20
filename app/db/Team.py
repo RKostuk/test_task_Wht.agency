@@ -7,8 +7,8 @@ class Team_method(Base_method):
     def create_team(self, team_name: TeamDataSchema) -> bool:
         """
         create new team
-        :param team_name:
-        :return:
+        :param team_name:TeamDataSchema
+        :return: bool
         """
         team = self.session.query(Team).filter_by(name=team_name.name).first()
         if team is None:
@@ -21,8 +21,8 @@ class Team_method(Base_method):
     def read_team(self, team_name: TeamNameSchema) -> TeamInfoSchema or bool:
         """
         select info to team
-        :param team_name:
-        :return:
+        :param team_name:TeamNameSchema
+        :return:TeamInfoSchema or bool
         """
         team = self.session.query(Team).filter_by(name=team_name.team_name).first()
         if team is not None:
@@ -38,8 +38,8 @@ class Team_method(Base_method):
     def update_team(self, name: TeamUpdateDataSchema) -> bool:
         """
         change name
-        :param name:
-        :return:
+        :param name:TeamUpdateDataSchema
+        :return:bool
         """
         user = self.session.query(Team).filter_by(name=name.team_name).first()
         if user is not None:
@@ -52,8 +52,8 @@ class Team_method(Base_method):
     def delete_team(self, team_name: TeamNameSchema) -> bool:
         """
         delete data person
-        :param email:
-        :return:
+        :param team_name:TeamNameSchema
+        :return:bool
         """
         team = self.session.query(Team).filter_by(name=team_name.team_name).first()
         if team is not None:

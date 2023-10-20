@@ -10,7 +10,7 @@ class Person_method(Base_method):
         """
         create new user add in db
         :param person:PersonCreate
-        :return: True(add user)|False(not add user)
+        :return: bool
         """
         user = self.session.query(Person).filter_by(email=person.email).first()
         if user is None:
@@ -28,8 +28,8 @@ class Person_method(Base_method):
     def read_person(self, email_data: EmailDataSchema) -> PersonInfoTeamSchema or bool:
         """
         selec data person
-        :param email:
-        :return:
+        :param email_data: EmailDataSchema
+        :return: PersonInfoTeamSchema or bool
         """
         user = self.session.query(Person).filter_by(email=email_data.email).first()
         if user:
@@ -46,8 +46,8 @@ class Person_method(Base_method):
     def update_person(self, email_data: PersonUpdateDataSchema) -> bool:
         """
         change email address
-        :param email:
-        :return:
+        :param email_data: PersonUpdateDataSchema
+        :return: bool
         """
         user = self.session.query(Person).filter_by(email=email_data.email).first()
         if user is not None:
@@ -60,8 +60,8 @@ class Person_method(Base_method):
     def delete_person(self, email_data: EmailDataSchema) -> bool:
         """
         delete data person
-        :param email:
-        :return:
+        :param email_data:EmailDataSchema
+        :return:bool
         """
         user = self.session.query(Person).filter_by(email=email_data.email).first()
         if user is not None:
