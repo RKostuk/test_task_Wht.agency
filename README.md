@@ -24,7 +24,7 @@ Swagger provides a convenient interface to make requests to the API. You can che
 ## API Endpoints
 
 ### Create a User
-Endpoint: `http://127.0.0.1:8000/user_add/`  
+Endpoint: `http://127.0.0.1:8000/user/create/`  
 Method: `POST`  
 Request Body:
 ```json
@@ -44,7 +44,7 @@ Response:
 ```
 
 ### Get User information
-Endpoint: `http://127.0.0.1:8000/user_info/`  
+Endpoint: `http://127.0.0.1:8000/user/info/`  
 Method: `GET`  
 Request Body:
 ```json
@@ -67,7 +67,7 @@ Response:
 ```
 
 ### Update User information
-Endpoint: `http://127.0.0.1:8000/user_update_email/`  
+Endpoint: `http://127.0.0.1:8000/user/update_email/`  
 Method: `PUT`  
 Request Body:
 ```json
@@ -86,7 +86,7 @@ Response:
 ```
 
 ### Delete User information
-Endpoint: `http://127.0.0.1:8000/user_delete/`  
+Endpoint: `http://127.0.0.1:8000/user/delete/`  
 Method: `DELETE`  
 Request Body:
 ```json
@@ -104,7 +104,7 @@ Response:
 ```
 
 ### Create a Team
-Endpoint: `http://127.0.0.1:8000/team_create/`  
+Endpoint: `http://127.0.0.1:8000/team/create/`  
 Method: `POST`  
 Request Body:
 ```json
@@ -123,7 +123,7 @@ Response:
 
 
 ### Get Team information
-Endpoint: `http://127.0.0.1:8000/team_info/`  
+Endpoint: `http://127.0.0.1:8000/team/info/`  
 Method: `GET`  
 Request Body:
 ```json
@@ -154,7 +154,7 @@ Response:
 
 
 ### Update Team information
-Endpoint: `http://127.0.0.1:8000/team_update/`  
+Endpoint: `http://127.0.0.1:8000/team/update/`  
 Method: `PUT`  
 Request Body:
 ```json
@@ -173,7 +173,7 @@ Response:
 ```
 
 ### Delete User information
-Endpoint: `http://127.0.0.1:8000/team_delete/`  
+Endpoint: `http://127.0.0.1:8000/team/delete/`  
 Method: `DELETE`  
 Request Body:
 ```json
@@ -191,7 +191,7 @@ Response:
 ```
 
 ### Adding a user to a group
-Endpoint: `http://127.0.0.1:8000/add_user_to_team/`  
+Endpoint: `http://127.0.0.1:8000/user/add_to_team/` 
 Method: `POST`  
 Request Body:
 ```json
