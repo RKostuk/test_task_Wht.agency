@@ -128,7 +128,7 @@ Method: `GET`
 Request Body:
 ```json
 {
-    "team_name": "string"
+    "team_name": str
 }
 ```
 
