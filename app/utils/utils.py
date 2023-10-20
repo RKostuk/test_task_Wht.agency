@@ -1,4 +1,7 @@
-def return_result(result: bool, info: str = None, data: dict = None) -> dict:
+from schemas.pySchemas import ResponseSchema
+
+
+def return_result(result: bool, info: str = None, data: dict = None) -> any:
     """
     Creating a return result
     :param result:
@@ -8,18 +11,8 @@ def return_result(result: bool, info: str = None, data: dict = None) -> dict:
     """
     if data is not None:
         if info is not None:
-            return {
-                'result': result,
-                'info': info,
-                'data': data,
-            }
+            return ResponseSchema(result=result, info=info, data=data)
         else:
-            return {
-                'result': result,
-                'data': data,
-            }
+            return ResponseSchema(result=result, data=data)
     else:
-        return {
-            'result': result,
-            'info': info,
-        }
+        return ResponseSchema(result=result, info=info)

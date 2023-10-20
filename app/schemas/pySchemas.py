@@ -10,7 +10,7 @@ class PersonDataSchema(EmailDataSchema):
     surname: str
 
 class PersonInfoTeamSchema(PersonDataSchema):
-    team: list
+    team: str
 
 class TeamDataSchema(BaseModel):
     name: str
@@ -23,8 +23,8 @@ class TeamAddPersonSchema(BaseModel):
     name_team: str
 
 class PersonUpdateDataSchema(BaseModel):
-    email: str
-    new_email: str
+    email: EmailStr
+    new_email: EmailStr
 
 class TeamUpdateDataSchema(BaseModel):
     team_name: str
@@ -33,3 +33,8 @@ class TeamUpdateDataSchema(BaseModel):
 class TeamInfoSchema(BaseModel):
     team_name: str
     members: List[str]
+
+class ResponseSchema(BaseModel):
+    result: bool
+    info: str = None
+    data: dict = None

@@ -1,6 +1,6 @@
 from pydantic import EmailStr
 
-from db.models import Person
+from db.models import Person, Team
 from db.session import Base_method
 from schemas.pySchemas import PersonDataSchema, PersonInfoTeamSchema, EmailDataSchema, PersonUpdateDataSchema
 
@@ -31,12 +31,13 @@ class Person_method(Base_method):
         :return: PersonInfoTeamSchema or bool
         """
         user = self.session.query(Person).filter_by(email=email_data.email).first()
-        if user:
+        if user is not None:
+            team = self.session.query(Team).filter_by(id=user.team_id).first()
             data = {
                 'name': user.name,
                 'surname': user.surname,
                 'email': user.email,
-                'team': user.team,
+                'team': team.name,
             }
             return data
         else:
@@ -49,7 +50,8 @@ class Person_method(Base_method):
         :return: bool
         """
         user = self.session.query(Person).filter_by(email=email_data.email).first()
-        if user is not None:
+        status_new_email = self.session.query(Person).filter_by(email=email_data.new_email).first()
+        if user is not None and status_new_email is None:
             user.email = email_data.new_email
             self.session.commit()
             return True

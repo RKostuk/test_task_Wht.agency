@@ -29,7 +29,7 @@ class Team_method(Base_method):
             user_list = self.session.query(Person).filter_by(team_id=team.id).all()
             data = {
                 'team_name': team.name,
-                'members': user_list
+                'members': [{'name': a.name, 'surname': a.surname, 'email': a.email} for a in user_list]
             }
             return data
         else:
@@ -42,7 +42,8 @@ class Team_method(Base_method):
         :return:bool
         """
         user = self.session.query(Team).filter_by(name=name.team_name).first()
-        if user is not None:
+        status_new_name = self.session.query(Team).filter_by(name=name.new_team_name).first()
+        if user is not None and status_new_name is None:
             user.name = name.new_team_name
             self.session.commit()
             return True
