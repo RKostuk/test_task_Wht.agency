@@ -13,14 +13,6 @@ PM = Person_method()
 TM = Team_method()
 user_router = APIRouter(prefix='/user')
 
-
-@user_router.get("/", status_code=200)
-async def root():
-    return {
-        "result": "working"
-    }
-
-
 @user_router.post('/create/', status_code=200)
 async def add_user(data: PersonDataSchema):
     if PM.create_person(person=data):
