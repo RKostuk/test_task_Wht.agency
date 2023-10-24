@@ -20,7 +20,7 @@ To test this API, you can use the interactive Swagger documentation. To do this,
 
 Swagger provides a convenient interface to make requests to the API. You can check available endpoints, see what parameters they expect, and even try out real requests.
 
-### Getting Started
+## Getting Started
 To run the project, follow these steps:
 
 1. Install project dependencies using Poetry:
