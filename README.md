@@ -20,6 +20,25 @@ To test this API, you can use the interactive Swagger documentation. To do this,
 
 Swagger provides a convenient interface to make requests to the API. You can check available endpoints, see what parameters they expect, and even try out real requests.
 
+### Getting Started
+To run the project, follow these steps:
+
+1. Install project dependencies using Poetry:
+   ```
+   poetry install
+   ```
+
+2. Navigate to the app directory:
+   ```
+   cd .\app\
+   ```
+
+3. Run the main Python file using Poetry:
+   ```
+   poetry run python main.py
+   ```
+
+The API server will start locally at `http://127.0.0.1:8000/`.
 
 ## API Endpoints
 
@@ -208,28 +227,3 @@ Response:
     "info": str
 }
 ```
-
-
-
-
-### Getting Started
-To run the project, follow these steps:
-
-1. Install project dependencies using Poetry:
-   ```
-   poetry install
-   ```
-
-2. Navigate to the app directory:
-   ```
-   cd .\app\
-   ```
-
-3. Run the main Python file using Poetry:
-   ```
-   poetry run python main.py
-   ```
-
-The API server will start locally at `http://127.0.0.1:8000/`.
-
-Happy coding! 🚀
